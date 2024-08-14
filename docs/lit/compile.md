@@ -12,7 +12,7 @@ installed on your machine.
 Once you have the necessary prerequisites, LiT can be compiled by running the following
 commands:
 
-```shell script
+```shell
 git clone https://github.com/lightninglabs/lightning-terminal.git
 cd lightning-terminal
 make install
@@ -42,13 +42,13 @@ install all necessary dependencies.
 
 Then, instead of `make install` run the following commands:
 
-```shell script
+```shell
 docker build -f dev.Dockerfile -t my-lit-dev-image .
 ```
 
 If successful, you can then run the docker image with:
 
-```shell script
+```shell
 docker run -p 8443:8443 --rm --name litd my-lit-dev-image \
   --httpslisten=0.0.0.0:8443 \
   # Add custom configuration flags here
@@ -63,7 +63,7 @@ To create a production build, you need to specify the git tag to create the
 image from. All local files will be ignored, everything is cloned and built from
 GitHub so you don't need to install any dependencies:
 
-```shell script
+```shell
 docker build -t lightninglabs/lightning-terminal --build-arg checkout=v0.3.2-alpha .
 ```
 
@@ -86,7 +86,7 @@ To compile the proto files into JS/TS code, follow the following steps:
    ```
 1. Fix any typing, linting, or unit test failures introduced by the update. Run the
    commands below to find and fix these errors in the app code.
-   ```shell script
+   ```shell
    cd app
    yarn tsc
    yarn lint

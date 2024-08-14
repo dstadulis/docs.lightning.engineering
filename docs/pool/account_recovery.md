@@ -18,7 +18,7 @@ additional data blob similar to the Static Channel Backups present within
 An auctioneer-assisted account recovery intent can be issued through the 
 `pool accounts recover` command or the `RecoverAccounts` RPC.
 
-```text
+```shell
 $ pool accounts recover -h
 NAME:
    pool accounts recover - recover accounts after data loss with the help of the auctioneer

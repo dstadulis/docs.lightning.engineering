@@ -111,7 +111,7 @@ Where `<macaroon>` is the hex encoded binary data from the macaroon file itself.
 
 A very simple example using `curl` may look something like this:
 
-```
+```shell
 curl --insecure --header "Grpc-Metadata-macaroon: $(xxd -ps -u -c 1000  $HOME/.lnd/data/chain/bitcoin/simnet/admin.macaroon)" https://localhost:8080/v1/getinfo
 ```
 
@@ -164,17 +164,17 @@ Examples:
 
 *   Create a new wallet stateless (first run):
 
-    ```
+    ```shell
     lncli create --stateless_init --save_to=/safe/location/admin.macaroon
     ```
 *   Unlock a wallet that has previously been initialized stateless:
 
-    ```
+    ```shell
     lncli unlock --stateless_init
     ```
 *   Use the created macaroon:
 
-    ```
+    ```shell
     lncli --macaroonpath=/safe/location/admin.macaroon getinfo
     ```
 

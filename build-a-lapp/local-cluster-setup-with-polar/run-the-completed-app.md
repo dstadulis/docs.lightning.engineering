@@ -8,13 +8,13 @@ In the next section, we will strip the completed sample app down and rebuild the
 
 In order to run the web app locally, first install [NodeJS v12.x](https://nodejs.org/en/download/) on your computer. Next, install [Yarn v1.x](https://classic.yarnpkg.com/en/docs/install) either from the link, or by opening up a Terminal and running:
 
-```text
+```shell
 npm install -g yarn
 ```
 
 After getting both of the requirements installed, you’ll need to clone the `builders-guide-sample-app` repo from GitHub and install its dependencies. To do this, run the following commands from your open Terminal:
 
-```text
+```shell
 git clone https://github.com/lightninglabs/builders-guide-sample-app.git
 cd builders-guide-sample-app
 yarn
@@ -38,7 +38,7 @@ If you’d like to play with the final app, with Lightning integrated, before di
 
 Checkout the final branch and start the app:
 
-```text
+```shell
 git checkout final
 yarn dev
 ```

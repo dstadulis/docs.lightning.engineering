@@ -14,7 +14,7 @@ We want to store the connection info because we want our backend to interact wit
 
 Let’s see what’s needed to implement this feature by checking out the `feat-1` branch. We’ll review the major changes that were made.
 
-```text
+```shell
 git checkout feat-1
 ```
 

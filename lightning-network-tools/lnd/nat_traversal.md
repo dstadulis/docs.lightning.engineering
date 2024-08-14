@@ -2,7 +2,7 @@
 
 `lnd` has support for NAT traversal using a number of different techniques. At the time of writing this documentation, UPnP and NAT-PMP are supported. NAT traversal can be enabled through `lnd`'s `--nat` flag.
 
-```text
+```shell
 lnd --nat
 ```
 

@@ -39,8 +39,8 @@ The `pool auction` sub-command houses a number of useful commands to explore the
 
 One can browse the latest cleared batch using the `pool auction snapshot` command:
 
-```text
-🏔 pool auction snapshot 
+```shell
+$ pool auction snapshot 
 {
         "version": 0,
         "batch_id": "02a25623c6ebb497758d7f0bfbe8b06785f3e14364b4da689be5fe0f2dfbaec4ba",
@@ -76,7 +76,7 @@ Note that the `pool auction snapshot` command can be used to determine the past 
 
 The command also accept a target `batch_id` as well. Here we can use the `prev_batch_id` to examine the _prior_ batch, similar to traversing a link-listed/blockchain:
 
-```text
+```shell
 pool auction snapshot --batch_id=03687baa3c7414e800ddba37edacb3281999739303b7290a69bd457f428ecd9b2c
 ```
 
@@ -84,8 +84,8 @@ pool auction snapshot --batch_id=03687baa3c7414e800ddba37edacb3281999739303b7290
 
 There are various fees paid and accumulated during a successful batch execution. The easiest way to get an overview of the total impact of fees on ones account is to run
 
-```text
-🏔 pool auction leases
+```shell
+$ pool auction leases
 {
         "leases": [
                 {

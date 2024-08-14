@@ -70,7 +70,7 @@ If specified, then this will be used to encrypt the cipher seed itself. The ciph
 
 The initial entry point to trigger recovery of on-chain funds in the command line is the `lncli create` command.
 
-```text
+```shell
 lncli create
 ```
 
@@ -139,8 +139,8 @@ In `lnd`'s logs, you should see something along the lines of \(irrelevant lines 
 
 That final line indicates the rescan is complete! If not all funds have appeared, then the user may need to _repeat_ the process with a higher recovery window. Depending on how old the wallet is \(the cipher seed stores the wallet's birthday!\) and how many addresses were used, the rescan may take anywhere from a few minutes to a few hours. To track the recovery progress, one can use the command `lncli getrecoveryinfo`. When finished, the following is returned,
 
-```text
-⛰  lncli getrecoveryinfo
+```shell
+$ lncli getrecoveryinfo
 {
     "recovery_mode": true,
     "recovery_finished": true,
@@ -150,7 +150,7 @@ That final line indicates the rescan is complete! If not all funds have appeared
 
 If the rescan wasn't able to complete fully \(`lnd` was shutdown for example\), then from `lncli unlock`, it's possible to _restart_ the rescan from where it left off with the `--recovery-window` argument:
 
-```text
+```shell
 lncli unlock --recovery_window=2500
 ```
 
@@ -160,7 +160,7 @@ Note that if this argument is not specified, then the wallet will not _re-enter_
 
 The recovery methods described above assume a clean slate for a node, so there's no existing UTXO or key data in the node's database. However, there're times when an _existing_ node may want to _manually_ rescan the chain. We have a command line flag for that! Just start `lnd` and add the following flag:
 
-```text
+```shell
 lnd --reset-wallet-transactions
 ```
 
@@ -194,14 +194,14 @@ An example of using file system level notification to [copy the backup to a dist
 
 Another way to obtain SCBS for all or a target channel is via the new `exportchanbackup` `lncli` command:
 
-```text
-⛰  lncli --network=simnet exportchanbackup --chan_point=29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0
+```shell
+$ lncli --network=simnet exportchanbackup --chan_point=29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0
 {
     "chan_point": "29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0",
     "chan_backup": "02e7b423c8cf11038354732e9696caff9d5ac9720440f70a50ca2b9fcef5d873c8e64d53bdadfe208a86c96c7f31dc4eb370a02631bb02dce6611c435753a0c1f86c9f5b99006457f0dc7ee4a1c19e0d31a1036941d65717a50136c877d66ec80bb8f3e67cee8d9a5cb3f4081c3817cd830a8d0cf851c1f1e03fee35d790e42d98df5b24e07e6d9d9a46a16352e9b44ad412571c903a532017a5bc1ffe1369c123e1e17e1e4d52cc32329aa205d73d57f846389a6e446f612eeb2dcc346e4590f59a4c533f216ee44f09c1d2298b7d6c"
 }
 
-⛰  lncli --network=simnet exportchanbackup --all
+$ lncli --network=simnet exportchanbackup --all
 {
     "chan_points": [
         "29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0"
@@ -209,7 +209,7 @@ Another way to obtain SCBS for all or a target channel is via the new `exportcha
     "multi_chan_backup": "fd73e992e5133aa085c8e45548e0189c411c8cfe42e902b0ee2dec528a18fb472c3375447868ffced0d4812125e4361d667b7e6a18b2357643e09bbe7e9110c6b28d74f4f55e7c29e92419b52509e5c367cf2d977b670a2ff7560f5fe24021d246abe30542e6c6e3aa52f903453c3a2389af918249dbdb5f1199aaecf4931c0366592165b10bdd58eaf706d6df02a39d9323a0c65260ffcc84776f2705e4942d89e4dbefa11c693027002c35582d56e295dcf74d27e90873699657337696b32c05c8014911a7ec8eb03bdbe526fe658be8abdf50ab12c4fec9ddeefc489cf817721c8e541d28fbe71e32137b5ea066a9f4e19814deedeb360def90eff2965570aab5fedd0ebfcd783ce3289360953680ac084b2e988c9cbd0912da400861467d7bb5ad4b42a95c2d541653e805cbfc84da401baf096fba43300358421ae1b43fd25f3289c8c73489977592f75bc9f73781f41718a752ab325b70c8eb2011c5d979f6efc7a76e16492566e43d94dbd42698eb06ff8ad4fd3f2baabafded"
 }
 
-⛰  lncli --network=simnet exportchanbackup --all --output_file=channels.backup
+$ lncli --network=simnet exportchanbackup --all --output_file=channels.backup
 ```
 
 As shown above, a user can either: specify a specific channel to backup, backup all existing channels, or backup directly to an on-disk file. All backups use the same format.
@@ -222,14 +222,14 @@ Using the gRPC interface directly, [a new call: `SubscribeChannelBackups`](https
 
 If a node is being created from scratch, then it's possible to pass in an existing SCB using the `lncli create` or `lncli unlock` commands:
 
-```text
+```shell
 lncli create -multi_file=channels.backup
 ```
 
 Alternatively, the `restorechanbackup` command can be used if `lnd` has already been created at the time of SCB restoration:
 
-```text
-⛰  lncli restorechanbackup -h
+```shell
+$ lncli restorechanbackup -h
 NAME:
    lncli restorechanbackup - Restore an existing single or multi-channel static channel backup
 

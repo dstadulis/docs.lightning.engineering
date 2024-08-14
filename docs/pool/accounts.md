@@ -26,8 +26,8 @@ Creating an account has two parameters: the size of the account, and the expiry 
 
 We can create an account using `pool`, like so:
 
-```text
-pool accounts new --amt=50000000 --expiry_height=1773394 --conf_target=6
+```shell
+$ pool accounts new --amt=50000000 --expiry_height=1773394 --conf_target=6
 {
         "trader_key": "0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732",
         "outpoint": "c6f62c80095c98a57f2eef485a7ff06611f97dc856754cad330f4eeb538ff514:0",
@@ -44,8 +44,8 @@ Here I created an account with 0.5 BTC, that'll expire at height `1773394`. The 
 
 Once at least 3 blocks have passed \(in the alpha\), the account will be confirmed and ready for use:
 
-```text
-pool accounts list
+```shell
+$ pool accounts list
 {
         "accounts": [
                 {
@@ -68,8 +68,8 @@ We can add more funds to an account using the `pool accounts deposit` command. U
 
 Let's say I want to deposit an extra 1 million satoshis into my account, I can do so with the following command:
 
-```text
-pool accounts deposit --trader_key=0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732 --amt=1000000 --sat_per_vbyte=5
+```shell
+$ pool accounts deposit --trader_key=0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732 --amt=1000000 --sat_per_vbyte=5
 {
         "account": {
                 "trader_key": "0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732",
@@ -91,8 +91,8 @@ Note that these funds came from the backing `lnd` node that `poold` is connected
 
 Incrementally _withdrawing_ from an account is also supported. The command is similar to the deposit command. If I wanted to extract that 1 million from that account \(let's say it's my profit for the past week\) and send elsewhere, I can do so with the following command:
 
-```text
-pool accounts withdraw --trader_key=0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732 --amt=1000000 --sat_per_vbyte=5 --addr=tb1qe3ueyx8jhlj4h0s6mgywmtl8vlwxqkgkgp3m3s
+```shell
+$ pool accounts withdraw --trader_key="0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732" --amt=1000000 --sat_per_vbyte=5 --addr=tb1qe3ueyx8jhlj4h0s6mgywmtl8vlwxqkgkgp3m3s
 {
         "account": {
                 "trader_key": "0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732",
@@ -110,6 +110,6 @@ pool accounts withdraw --trader_key=0288096be9917f8ebdfc6eb2701635fe658f4eae1e02
 
 Finally, if you wish to send _all_ your funds elsewhere, it's possible to close your account out before the main expiration period. We can close out the account we created above with the following command:
 
-```text
-pool accounts close --trader_key=0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732 --sat_per_vbyte 11
+```shell
+pool accounts close --trader_key="0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732" --sat_per_vbyte 11
 ```

@@ -24,7 +24,7 @@ Download the latest binaries from the [releases](https://github.com/lightninglab
 
 Note that Pool requires `lnd` to be built with **all of its subservers** and requires running at least `v0.12.0-beta` (`v0.13.3-beta` or later is recommended).. Download the latest [official release binary](https://github.com/lightningnetwork/lnd/releases/latest) or build `lnd` from source by following the [installation instructions](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md). If you choose to build `lnd` from source, use the following command to enable all the relevant subservers:
 
-```text
+```shell
 make install tags="signrpc walletrpc chainrpc invoicesrpc"
 ```
 
@@ -42,7 +42,7 @@ If you’d prefer to compile from source code, you’ll need at least `go 1.14` 
 
 Run the following commands to download the code, compile and install Pool:
 
-```text
+```shell
 git clone https://github.com/lightninglabs/pool
 cd pool
 make install

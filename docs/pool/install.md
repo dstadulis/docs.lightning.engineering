@@ -20,7 +20,7 @@ To build both the `poold` and `pool` binaries from the source code, at least the
 
 To download the code, compile and install it, the following commands can then be run:
 
-```text
+```shell
 git clone https://github.com/lightninglabs/pool
 cd pool
 make install
@@ -34,7 +34,7 @@ Lightning Pool needs to be connected to an `lnd` node version `v0.12.0-beta` (`v
 
 [Installing `lnd` from source](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md#installing-lnd) is also possible but needs to be done **with all sub-server build flags enabled**:
 
-```text
+```shell
 make install tags="signrpc walletrpc chainrpc invoicesrpc"
 ```
 
@@ -42,23 +42,25 @@ make install tags="signrpc walletrpc chainrpc invoicesrpc"
 
 If `lnd` is configured with the default values and is running on the same machine, `poold` will be able to connect to it automatically and can be started by simply running:
 
-```text
-$ poold
+```shell
+poold
+```
 
-# Or if you want to do everything in the same terminal and run poold in the
-# background:
-$ poold &
+# Append `&` to background `poold` process, to continue operating in the same terminal
+```shell
+poold &
+```
 
-# For testnet mode, you'll need to specify the network as mainnet is the
-# default:
-$ poold --network=testnet
+# Specify networks other than default mainnet
+```shell
+poold --network=testnet
 ```
 
 In the case that `lnd` is running on a remote node, the `tls.cert` and the `admin.macaroon` files from the `lnd` data directory need to be copied to the machine where `poold` is running.
 
 The daemon can then be configured to connect to the remote `lnd` node by using the following command line flags:
 
-```text
+```shell
 poold --lnd.host=<the_remote_host_IP_address>:10009 \
         --lnd.macaroonpath=/some/directory/with/lnd/data/macaroons/admin.macaroon \
         --lnd.tlspath=/some/directory/with/lnd/data/tls.cert

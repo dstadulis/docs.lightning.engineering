@@ -12,13 +12,13 @@ One important aspect of the market is that rather than buy/sell satoshis, we use
 
 With that said, let's place some orders to try to earn some yield from this 0.5 BTC that's been burning a hole in our SD card for the past year. We'll place a single order for 10 million satoshis, wanting to receive 0.3% \(30 bps\) over a 2016 block period \(approximately 2 weeks\):
 
-```text
+```shell
 $ pool orders submit ask 10000000 0288096be9917f8ebdfc6eb2701635fe658f4eae1e0274dcce41418b3fb5145732 --interest_rate_percent=0.3 --lease_duration_blocks=2016
 
 -- Order Details --
 Ask Amount: 0.1 BTC
 Ask Duration: 2016
-Total Premium (yield from taker): 0.00029998 BTC 
+Total Premium (yield from taker): 0.00029998 BTC
 Rate Fixed: 1488
 Rate Per Block: 0.000001488 (0.0001488%)
 Execution Fee:  0.00010001 BTC
@@ -51,11 +51,10 @@ Take note of the `order_nonce`, it's used through the auction to identify orders
 
 We can then check out the order we just placed with the following command:
 
-```text
+```shell
 $ pool orders list
-
 {
-...
+// [...]
     "details": {
             "trader_key": "024010a572c9f89b78b9d024f2be6cd4d42f4b9a80bfee4a5855e85da128c78473",
             "rate_fixed": 1488,
@@ -73,7 +72,7 @@ $ pool orders list
     },
     "lease_duration_blocks": 2016,
     "version": 1
-...
+// [...]
 }
 ```
 
@@ -89,13 +88,13 @@ Let's now take a look at all the order specific command line flags that are avai
 
 Command for submitting an ask order:
 
-```text
+```shell
 pool orders submit ask
 ```
 
 Help output:
 
-```text
+```shell
 $ pool orders submit ask --help
 
 NAME:
@@ -137,7 +136,7 @@ NOTE: The default values shown in the command line help are different from the a
 
 Command for submitting a bid order:
 
-```text
+```shell
 pool orders submit bid
 ```
 
@@ -193,7 +192,7 @@ In contrast, the taker of the channel is always allowed to close the channel. Th
 
 To allow the formation of distinct premium rates over different durations, the possible lease durations are fixed and defined by the auctioneer. The current list of possible lease durations can be queried by running the following command:
 
-```text
+```shell
 $ pool auction leasedurations
 
 {
@@ -214,7 +213,7 @@ That execution fee is split into a static part \(the _base fee_ in satoshis\) th
 
 The fee is set by the server and can change depending on demand, chain fee climate or other operational costs. The current fee can be queried by running the following command:
 
-```text
+```shell
 $ pool auction fee
 
 {
@@ -293,8 +292,8 @@ To reduce the value of this worst-case estimation, there are two possible flags 
 
 To cancel an order. First get the order_nonce of the to be canceled order by using the list command and then cancel it: 
 
-```text
-pool orders cancel order_nonce
+```shell
+pool orders cancel $order_nonce
 ```
 
 ## Auction types

@@ -29,8 +29,8 @@ CookieAuthentication 1
 
 With the configuration file created, you'll then want to start the Tor daemon:
 
-```text
-⛰  tor
+```shell
+$ tor
 Feb 05 17:02:06.501 [notice] Tor 0.3.1.8 (git-ad5027f7dc790624) running on Darwin with Libevent 2.1.8-stable, OpenSSL 1.0.2l, Zlib 1.2.8, Liblzma N/A, and Libzstd N/A.
 Feb 05 17:02:06.502 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://www.torproject.org/download/download#warning
 Feb 05 17:02:06.502 [notice] Read configuration file "/usr/local/etc/tor/torrc".
@@ -52,7 +52,7 @@ Feb 05 17:02:11.000 [notice] Bootstrapped 100%: Done
 
 This indicates the daemon is fully bootstrapped and ready to proxy connections. At this point, we can now start `lnd` with the relevant arguments:
 
-```text
+```shell
 $ lnd -h
 
 <snip>
@@ -78,11 +78,11 @@ Inbound connections are possible due to `lnd` automatically creating an onion se
 
 Most of these arguments have defaults, so as long as they apply to you, routing all outbound and inbound connections through Tor can simply be done with either v2 or v3 onion services:
 
-```text
+```shell
 lnd --tor.active --tor.v2
 ```
 
-```text
+```shell
 lnd --tor.active --tor.v3
 ```
 
@@ -90,7 +90,7 @@ See [Listening for Inbound Connections](configuring_tor.md#listening-for-inbound
 
 Outbound support only can also be used with:
 
-```text
+```shell
 lnd --tor.active
 ```
 
@@ -102,7 +102,7 @@ Our support for Tor also has an additional privacy enhancing modified: stream is
 
 Activating stream isolation is very straightforward, we only require the specification of an additional argument:
 
-```text
+```shell
 lnd --tor.active --tor.streamisolation
 ```
 
@@ -144,7 +144,7 @@ Both types can be created and used automatically by `lnd`. Specifying which type
 
 For example, v3 onion services can be used with the following flags:
 
-```text
+```shell
 lnd --tor.active --tor.v3 --listen=localhost
 ```
 

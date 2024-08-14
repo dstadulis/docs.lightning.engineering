@@ -4,7 +4,7 @@
 
 Once an order has been matched in an auction, the `pool auction leases` command can be used to examine your current set of purchased/sold channel leases. An example output looks something like the following:
 
-```text
+```shell
 pool auction leases
 {
         "leases": [

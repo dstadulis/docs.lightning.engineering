@@ -10,7 +10,7 @@ Currently in our app, when a user clicks the Upvote button, we immediately make 
 
 Let’s go to the `feat-4a` branch to see how we can implement this feature.
 
-```text
+```shell
 git checkout feat-4a
 ```
 
@@ -194,7 +194,7 @@ Now that we have shown the payment request to the user, they can pay the invoice
 
 Checkout the `feat-4b` branch to view the new changes to the code.
 
-```text
+```shell
 git checkout feat-4b
 ```
 
@@ -362,7 +362,7 @@ We’re almost at the finish line. Let’s just add one last improvement to upda
 
 Checkout the `feat-4c` branch to view the new changes to the code.
 
-```text
+```shell
 git checkout feat-4c
 ```
 

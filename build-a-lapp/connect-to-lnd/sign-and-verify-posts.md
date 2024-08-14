@@ -6,7 +6,7 @@ In addition to verifying signatures, we took this opportunity to remove the user
 
 Let’s go to the `feat-3a` branch to see what’s changed.
 
-```text
+```shell
 git checkout feat-3a
 ```
 
@@ -134,7 +134,7 @@ Using `lnd` to sign a message is pretty straightforward. We just need to call th
 
 Checkout the `feat-3b` branch to see what’s changed.
 
-```text
+```shell
 git checkout feat-3b
 ```
 
@@ -234,7 +234,7 @@ Verifying a `Post`’s signature is very similar to signing a message. We’ll j
 
 Checkout the `feat-3c` branch to see what’s changed.
 
-```text
+```shell
 git checkout feat-3c
 ```
 

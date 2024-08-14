@@ -26,13 +26,13 @@ more information on this fee.
 
 If `lnd` is configured with the default values and is running on the same machine, `poold` will be able to connect to it automatically and can be started by simply running:
 
-```text
+```shell
 poold
 ```
 
 If you're using Lightning Terminal then you can just run `litd` instead:
 
-```text
+```shell
 litd
 ```
 
@@ -40,7 +40,7 @@ litd
 
 Creating an account has two parameters: the size of the account, and the expiry of an account. The funds for the account will be pulled from your `lnd` wallet. Create an account by running the following command:
 
-```text
+```shell
 pool accounts new --amt=50000000 --expiry_height=1773394 --conf_target=6
 ```
 
@@ -48,7 +48,7 @@ Once at least 3 blocks have passed \(in the alpha\), the account will be confirm
 
 Run the following command to view account details:
 
-```text
+```shell
 pool accounts list
 ```
 
@@ -58,7 +58,7 @@ There are two types of orders in the current version of Pool: asks, and bids. Yo
 
 To submit a bid:
 
-```text
+```shell
 pool orders submit bid
 ```
 
@@ -72,7 +72,7 @@ Be sure to add the following flags:
 
 We can then check out the order we just placed with the following command:
 
-```text
+```shell
 pool orders list
 ```
 
@@ -80,7 +80,7 @@ pool orders list
 
 Once an order has been matched in an auction, the `pool auction leases` command can be used to examine your current set of purchased/sold channel leases. An example output looks something like the following:
 
-```text
+```shell
 $ pool auction leases
 {
         "leases": [

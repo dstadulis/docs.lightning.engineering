@@ -385,7 +385,7 @@ directly, rather than scanning blocks or BIP 158 filters for relevant items.
 While `btcd` is syncing you can check on its progress using btcd's `getinfo`
 RPC command:
 ```shell
- btcctl --testnet --rpcuser=REPLACEME --rpcpass=REPLACEME getinfo
+$ btcctl --testnet --rpcuser=REPLACEME --rpcpass=REPLACEME getinfo
 {
   "version": 120000,
   "protocolversion": 70002,

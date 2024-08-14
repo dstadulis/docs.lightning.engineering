@@ -30,7 +30,7 @@ It will not show you an exact total, but you can see how much you will pay in fe
 
 You can check the status of your order at any time by running the following command: 
 
-```text
+```shell
 pool orders list
 ```
 
@@ -149,7 +149,7 @@ Not at this time but this is something we plan to add in the future.
 
 ### How do I buy a channel?
 
-```text
+```shell
 orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1db1c9f8713fbe0685009a882f7c01b6 --max_batch_fee_rate 253 --interest_rate_percent 0.0001
 ```
 
@@ -159,7 +159,7 @@ orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1
 
 ### How do I see the channel I bought?
 
-```text
+```shell
 accounts leases
 ```
 
