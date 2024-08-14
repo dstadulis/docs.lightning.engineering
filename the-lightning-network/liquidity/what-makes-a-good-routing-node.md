@@ -43,4 +43,3 @@ Routing nodes are providing a service to those sending and receiving payments. N
 While it is possible to score nodes, it is incredibly difficult to create a score that accurately reflects a node’s ability to effectively route payments in the Lightning Network. If such criteria was transparent and easily replicable, nodes would strive to converge to it, leaving the network homogeneous and possibly unable to function.
 
 As you build your routing node you will experiment with a wide range of tools and tactics, differentiate yourself from other nodes, and develop various strategies to attract others to peer with you and commit capital.
-

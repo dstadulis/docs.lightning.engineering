@@ -149,4 +149,3 @@ For example, v3 onion services can be used with the following flags:
 ```
 
 This will automatically create a hidden service for your node to use to listen for inbound connections and advertise itself to the network. The onion service's private key is saved to a file named `v2_onion_private_key` or `v3_onion_private_key` depending on the type of onion service used in `lnd`'s base directory. This will allow `lnd` to recreate the same hidden service upon restart. If you wish to generate a new onion service, you can simply delete this file. The path to this private key file can also be modified with the `--tor.privatekeypath` argument.
-

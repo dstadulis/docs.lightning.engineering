@@ -70,4 +70,3 @@ BTCPay contains an installation script for litd, which makes it easy to include 
 3. You can now find litd under Server Settings > Services
 
 [Continue here: Connect to Terminal](connect.md)
-

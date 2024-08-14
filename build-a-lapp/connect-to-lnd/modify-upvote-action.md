@@ -428,4 +428,3 @@ Here is alice before the upvote. The top post has 10 votes and her channel balan
 After the upvote, the balance updates automatically to 90,100 sats and the confetti rains down on the screen. 🥳 🎉 🎊
 
 Congratulations! We have now completed all of the Lightning functionality we wanted to add to this sample application.
-

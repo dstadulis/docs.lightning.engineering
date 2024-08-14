@@ -11,4 +11,3 @@ If you’d like to extend this example app to add more features, here are some i
 * Add support for webln + Joule to avoid showing the payment request modal.
 * Only notify the sender and receiver of paid invoices, instead of all connected browsers
 * Prevent multiple upvotes being submitted for a single payment hash
-

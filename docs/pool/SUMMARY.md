@@ -10,4 +10,3 @@
 * [Batch Execution](batch_execution.md)
 * [Sidecar Channels](sidecar_channels.md)
 * [FAQs](faq.md)
-

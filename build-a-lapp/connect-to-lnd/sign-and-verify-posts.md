@@ -426,4 +426,3 @@ Refresh the page in your browser and create a couple posts. You will now see the
 To test the Verify Signature feature, you’ll need to disconnect and reconnect using a different node, such as carol. Then you’ll be able to click on the “Verify Signature” button and see the “verified” badge now displayed.
 
 We have now completed this feature. Next, we are going to take on our biggest improvement. We’ll implement making payments over Lightning in order to upvote a post.
-

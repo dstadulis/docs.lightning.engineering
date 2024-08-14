@@ -72,4 +72,3 @@ Another metric of a good peer is your cost of pushing out payments. If a peer re
 
 * Avoid closing channels unless peers are offline or funds cannot be pushed out through the Lightning Network
 * Identify your good peers and regularly push payments out through their channel, either by making Lightning payments yourself or swap funds into your onchain wallet with Loop or Autoloop.
-

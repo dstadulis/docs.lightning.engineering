@@ -95,4 +95,3 @@ The `pool` command will pick up these file automatically on mainnet if no custom
 For more information on macaroons, [see the macaroon documentation of lnd.](https://github.com/lightningnetwork/lnd/blob/master/docs/macaroons.md)
 
 **NOTE**: pool's macaroons are independent from `lnd`'s. The same macaroon cannot be used for both `poold` and `lnd`.
-

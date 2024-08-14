@@ -167,4 +167,3 @@ Once all orders are in a final state \(either fully matched or canceled\), the t
 As long as there are no differences in the operating system or the processor architecture, moving `poold` to another machine is as easy as moving the `.pool` directory.
 
 However, because `poold` doesn't have any private keys on its own, it always has to be connected to the same `lnd` node. Moving `poold` between nodes is not supported and will result in errors. If you need to use a different `lnd` node, cancel all orders and close all accounts first, then start a fresh `poold` with a new `lnd` instance.
-

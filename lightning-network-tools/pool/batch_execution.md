@@ -132,4 +132,3 @@ Here you can see a summary of all matches you've been part of and that resulted 
 In the last example in the list above, the trader this time around bought a channel of 1,200,000 sats, and paid a premium of 11999 to the seller. Also this time around the trader paid an execution fee and chain fee, resulting in a total cost of 11999+1201+165 = 13365 sats.
 
 Finally, a total tally of fees earned and paid is given. The command takes optional account and batch id arguments in case you want to filter the leases returned.
-

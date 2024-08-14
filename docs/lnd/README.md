@@ -25,4 +25,3 @@ description: >-
 {% page-ref page="recovery.md" %}
 
 {% page-ref page="watchtower.md" %}
-

@@ -135,4 +135,3 @@ If you go back to your browser, refresh the page and connect your node, you shou
 This was a simple feature to implement, which was mostly plumbing code to get the data from `lnd`, through the backend, to the frontend, and finally displayed in the browser. The important takeaway here is that communicating with the Lightning Network is not very different from communicating with any other third-party APIs.
 
 In the next feature, we’ll work on updating the Post creation process to add some Lightning functionality.
-

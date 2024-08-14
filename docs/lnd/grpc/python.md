@@ -195,7 +195,6 @@ stub = lnrpc.LightningStub(channel)
 stub.GetInfo(ln.GetInfoRequest())
 ```
 
-
 ## Conclusion
 
 With the above, you should have all the `lnd` related `gRPC` dependencies

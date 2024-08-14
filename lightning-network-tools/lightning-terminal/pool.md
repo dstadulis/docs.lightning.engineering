@@ -61,4 +61,3 @@ To make use of Pool Lite, you will need a regular Pool account, meaning you'll n
 To inspect public orders, look at the "Order Book" and scroll through the available Buy and Sell orders, the nodes placing these bids and asks and the appropriate terms. You can match directly with these orders by clicking Buy/Sell on the right and following the steps in the UI.
 
 <figure><img src="../../.gitbook/assets/PoolLiteFull.jpg" alt=""><figcaption><p>The Pool Lite UI showing the market, public and personal orders.</p></figcaption></figure>
-

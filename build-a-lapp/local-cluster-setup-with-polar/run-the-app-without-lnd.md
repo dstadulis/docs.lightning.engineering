@@ -88,4 +88,3 @@ src/
 ```
 
 Now that you have a basic understanding of the initial application that we are working with, let’s start adding some Lightning Network functionality to our app.
-

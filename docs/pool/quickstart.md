@@ -101,4 +101,3 @@ $ pool auction leases
 ```
 
 Here we can see that a channel sold for 40k satoshis, and ended up paying 5k satoshis in chain and execution fees, netting a cool 35k satoshi yield. Within the actual auction, these numbers will vary based on the chain fee rate, the market prices, and also the execution fees. Users can constraint how much chain fees they'll pay by setting the `--max_batch_fee_rate` argument when submitting orders.
-

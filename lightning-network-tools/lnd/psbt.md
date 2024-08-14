@@ -490,4 +490,3 @@ For example, let's say we want to open two channels. We call `openchannel --psbt
 ### Use --no\_publish for batch transactions
 
 To mitigate the problem described in the section above, when open multiple channels in one batch transaction, it is **imperative to use the `--no_publish`** flag for each channel but the very last. This prevents the full batch transaction to be published before each and every single channel has fully completed its funding negotiation.
-

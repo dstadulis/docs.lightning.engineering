@@ -13,6 +13,3 @@ description: >-
 {% page-ref page="sign-and-verify-posts.md" %}
 
 {% page-ref page="modify-upvote-action.md" %}
-
-
-

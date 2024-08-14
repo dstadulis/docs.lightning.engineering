@@ -67,4 +67,3 @@ To perform a Lightning Network transaction, both peers as well as all routing no
 ## Unanswered questions?
 
 Still have questions? [You may submit your questions about the Lightning Network here](https://docs.google.com/forms/d/e/1FAIpQLSf1NQWyP_S_KjAHXQbRjVKPHwPm87xp1Ds94scjOhBYy_MJmA/viewform).
-

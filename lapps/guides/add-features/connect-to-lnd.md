@@ -266,4 +266,3 @@ It will output a hex-encoded macaroon that only has the privileges listed above.
 You should be redirected to the home screen and the link in the Navbar should say **Disconnect**. Feel free to test the failure case by providing an invalid host or macaroon.
 
 We have now added the ability for our app to communicate with `lnd`. Next, we are going to use the token on the client to fetch the node’s alias and channel balance to display in the top Navbar.
-

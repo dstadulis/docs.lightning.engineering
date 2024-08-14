@@ -85,4 +85,3 @@ Second Window:
 14. In the first window, alice’s balance in the navbar has increased by 100 sats to 116,048 sats, and in the second window, carol's balance in the navbar has decreased by 101 sats to 124,899 sats.
 
 Now that you’ve seen all of the amazing features our Lightning App has, dive into the code in the next section to learn how this app was built.
-

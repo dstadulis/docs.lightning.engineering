@@ -331,4 +331,3 @@ In the future, more matching restrictions will likely be implemented, for exampl
   receive the leased channel instead of the node of the bidder.
 
 To allow these future upgrades to work seamlessly, a version field was added to the order submission protocol from the beginning. With this version field, the trader and auctioneer always know what fields an order is supposed to have set and therefore what fields are covered by the trader's order signature.
-

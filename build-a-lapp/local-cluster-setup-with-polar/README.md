@@ -78,4 +78,3 @@ Before moving on, click on bob’s `lnd` node and over to his **Connect** dashbo
 ![Bob Connect](../../.gitbook/assets/bobConnect.png)
 
 Now, click the red **Stop** button in the top right corner and prepare for the next section.
-

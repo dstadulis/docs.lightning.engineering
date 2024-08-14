@@ -44,4 +44,3 @@ Fuzzing generally works best with a corpus that is of minimal size while achievi
 ## Disclosure \#\#
 
 If you find any crashers that affect LND security, please disclose with the information found [here](https://github.com/lightningnetwork/lnd/#security).
-

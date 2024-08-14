@@ -190,4 +190,3 @@ Forward fee entries represent the fees we earned from forwarding payments.
 
 Known Omissions: 
 - See the note on txids in the Forwards section. 
-

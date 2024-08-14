@@ -313,4 +313,3 @@ Once the process has been initiated, `lnd` will proceed to:
 5. Once the commitment transaction confirms, given information within the SCB
 
    we'll re-derive all keys we need, and then sweep the funds.
-
