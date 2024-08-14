@@ -180,7 +180,7 @@ For `lnd`:
   After:
 
   ```shell
-  ⛰  litd lnd.lnddir=~/.lnd --lnd.alias=merchant ...
+  litd --lnd.lnddir=~/.lnd --lnd.alias=merchant ...
   ```
 
 For `loop`:

@@ -35,8 +35,8 @@ By leaving off the `--force` flag, we request the final break down to confirm th
 In this case, if this order is executed, then I'll gain 29k satoshis:
 
 ```text
-premium = (rate_fixed / billion) * amount * blocks
-29,998 = (1,488/1,000,000,000)*10,000,000*2,016
+premium = ( rate_fixed / billion ) * amount * blocks
+29,998 = ( 1,488 / 1,000,000,000 ) * 10,000,000 * 2,016
 ```
 
 It's important to note that although internally we use a fixed rate per block to compute the final premium, on the command line, we accept the final acceptable premium as a _percentage_. Therefore, when submitting orders, one should place the value that they wish to receive or accept at the end of the lease period. Internally, we'll then compute the _per block lease rate_ and submit the order using _that_.

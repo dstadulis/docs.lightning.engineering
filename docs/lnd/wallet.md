@@ -69,31 +69,21 @@ database is not in itself more secure than leaving the database unencrypted in
 the first place. This example might be useful in a containerized environment
 though where the secrets are mounted to a file anyway.
 
-- Start `lnd` without the flag:
-  ```shell
-  $   lnd --bitcoin.active --bitcoin.xxxx .....
-  ```
-- Create the wallet and write down the seed in a safe place:
-  ```shell
-  $   lncli create
-  ```
-- Stop `lnd` again:
-  ```shell
-  $   lncli stop
-  ```
-- Write the password to a file:
-  ```shell
-  $   echo 'my-$up3r-Secret-Passw0rd' > /some/safe/location/password.txt
-  ```
-- Make sure the password file can only be read by our user:
-  ```shell
-  $   chmod 0400 /some/safe/location/password.txt
-  ```
-- Start `lnd` with the auto-unlock flag:
-  ```shell
-  $   lnd --bitcoin.active --bitcoin.xxxx ..... \
+```shell
+  # Start `lnd` without the flag:
+  lnd --bitcoin.active --bitcoin.xxxx .....
+  # Create the wallet and write down the seed in a safe place:
+  lncli create
+  # Stop `lnd` again:
+  lncli stop
+  # Write the password to a file:
+  echo 'my-$up3r-Secret-Passw0rd' > /some/safe/location/password.txt
+  # Make sure the password file can only be read by our user:
+  chmod 0400 /some/safe/location/password.txt
+  # Start `lnd` with the auto-unlock flag:
+  lnd --bitcoin.active --bitcoin.xxxx ..... \
          --wallet-unlock-password-file=/some/safe/location/password.txt
-  ```
+```
 
 As with every command line flag, the `wallet-unlock-password-file` option can
 also be added to `lnd`'s configuration file, for example:

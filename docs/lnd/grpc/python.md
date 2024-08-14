@@ -9,34 +9,22 @@ Lnd uses the gRPC protocol for communication with clients like lncli. gRPC is
 based on protocol buffers and as such, you will need to compile the lnd proto
 file in Python before you can use it to communicate with lnd.
 
-1. Create a virtual environment for your project
-    ```shell
-    $  virtualenv lnd
-    ```
-2. Activate the virtual environment
-    ```shell
-    $  source lnd/bin/activate
-    ```
-3. Install dependencies (googleapis-common-protos is required due to the use of
-  google/api/annotations.proto)
-    ```shell
-    lnd $  pip install grpcio grpcio-tools googleapis-common-protos mypy-protobuf
-    ```
-4. Clone the google api's repository (required due to the use of
-  google/api/annotations.proto)
-    ```shell
-    lnd $  git clone https://github.com/googleapis/googleapis.git
-    ```
-5. Copy the lnd lightning.proto file (you'll find this at
-  [lnrpc/lightning.proto](https://github.com/lightningnetwork/lnd/blob/master/lnrpc/lightning.proto))
-  or just download it
-    ```shell
-    lnd $  curl -o lightning.proto -s https://raw.githubusercontent.com/lightningnetwork/lnd/master/lnrpc/lightning.proto
-    ```
-6. Compile the proto file
-    ```shell
-    lnd $  python -m grpc_tools.protoc --proto_path=googleapis:. --mypy_out=. --python_out=. --grpc_python_out=. lightning.proto
-    ```
+```sh
+# Create a virtual environment for your project
+virtualenv lnd
+# Activate the virtual environment
+source lnd/bin/activate
+# Install dependencies (googleapis-common-protos is required due to the use of google/api/annotations.proto)
+pip install grpcio grpcio-tools googleapis-common-protos mypy-protobuf
+# Clone the google api's repository (required due to the use of google/api/annotations.proto)
+git clone https://github.com/googleapis/googleapis.git
+# Copy the lnd lightning.proto file (you'll find this at
+# [lnrpc/lightning.proto](https://github.com/lightningnetwork/lnd/blob/master/lnrpc/lightning.proto))
+# or download it
+curl -o lightning.proto -s https://raw.githubusercontent.com/lightningnetwork/lnd/master/lnrpc/lightning.proto
+# Compile the proto file
+python -m grpc_tools.protoc --proto_path=googleapis:. --mypy_out=. --python_out=. --grpc_python_out=. lightning.proto
+```
 
 After following these steps, three files `lightning_pb2.py`,
 `lightning_pb2_grpc.py` and `lightning_pb2.pyi` will be generated. These files will be imported in your project anytime you use Python gRPC.

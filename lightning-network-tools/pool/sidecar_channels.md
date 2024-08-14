@@ -66,8 +66,8 @@ With the APIs proposed to be implemented in the Pool server and client, it shoul
     Charlie for those costs or not is not part of the protocol and irrelevant for
 
     this example.
-2.  ```
-    charlie$   pool sidecar offer --capacity 1000000 --self_chan_balance 200000 --auto <rest of order details>
+2.  ```shell
+    charlie@host:~$ pool sidecar offer --capacity 1000000 --self_chan_balance 200000 --auto <rest of order details>
     {
       "sidecar_ticket": "sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB...."
     }
@@ -78,8 +78,8 @@ With the APIs proposed to be implemented in the Pool server and client, it shoul
     The addition of this "auto" mode means that both sides need to only execute a single command and the rest of the negotiation happens in the background. If the `auto` flag is present, only the capacity and balance need to be specified, otherwise, all other information needs to be specified when submitting a full order.
 3.  Alice now needs to add her node's information:
 
-    ```
-    alice$   pool sidecar register sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB
+    ```shell
+    alice@host:~$ pool sidecar register sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB
     { 
       "sidecar_ticket": "sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB...."
     }
@@ -97,8 +97,8 @@ Otherwise, Alice and Charlie will need to carry out another round of communicati
 
     Alice:
 
-    ```
-    charlie$  pool orders submit bid --acct_key <charlie-key> \
+    ```shell
+    charlie@host:~$ pool orders submit bid --acct_key <charlie-key> \
       --interest_rate_percent xxx --sidecar_ticket  sidecarAAQgHBgUEAwIBAAMB...
     {
        "order_nonce": "0011223344...",
@@ -111,6 +111,6 @@ Otherwise, Alice and Charlie will need to carry out another round of communicati
     Charlie can give the final version of the ticket back to Alice.
 2.  Alice instructs her node to start expecting a channel.
 
-    ```
-    alice$  pool sidecar expect-channel sidecarAAQgHBgUEAwIBAAMBYwUBAg...
+    ```shell
+    alice@host:~$ pool sidecar expect-channel sidecarAAQgHBgUEAwIBAAMBYwUBAg...
     ```

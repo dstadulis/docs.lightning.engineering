@@ -40,9 +40,8 @@ remote.lnd.macaroonpath=/some/folder/with/lnd/data/admin.macaroon
 remote.lnd.tlscertpath=/some/folder/with/lnd/data/tls.cert
 ```
 
-> NOTE: It is highly recommended to not place the LND connection credentials
-inside the terminal home directory (`~/.lit/`) as `litd` may overwrite some of
-these files.
+> NOTE: DO NOT place the LND connection credentials inside the terminal home 
+directory (`~/.lit/`) as `litd` may overwrite some of these files.
 
 Run LiT:
 

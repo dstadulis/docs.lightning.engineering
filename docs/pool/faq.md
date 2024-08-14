@@ -150,7 +150,7 @@ Not at this time but this is something we plan to add in the future.
 ### How do I buy a channel?
 
 ```shell
-orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1db1c9f8713fbe0685009a882f7c01b6 --max_batch_fee_rate 253 --interest_rate_percent 0.0001
+pool orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1db1c9f8713fbe0685009a882f7c01b6 --max_batch_fee_rate 253 --interest_rate_percent 0.0001
 ```
 
 * `amt` is the total amount of inbound liquidity being bid on.
@@ -160,7 +160,7 @@ orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1
 ### How do I see the channel I bought?
 
 ```shell
-accounts leases
+pool accounts leases
 ```
 
 * This includes the capacity: `channel_amt_sat`

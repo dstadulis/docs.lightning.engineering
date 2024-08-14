@@ -40,9 +40,9 @@ A channel will be opened as soon as the batch transaction has received a suffici
 
 The seller has to be online when the batch clears or the match won't be included
 
-### Can I buy a channel for someone else?
+### How can I buy a channel for someone else?
 
-Not at this time but this is something we plan to add in the future.
+Use the [sidecar feature documented here](lightning-network-tools/pool/sidecar_channels.md)
 
 ## Channels
 
@@ -139,7 +139,7 @@ Not at this time but this is something we plan to add in the future.
 ### How do I buy a channel?
 
 ```shell
-orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1db1c9f8713fbe0685009a882f7c01b6 --max_batch_fee_rate 253 --interest_rate_percent 0.0001
+pool orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1db1c9f8713fbe0685009a882f7c01b6 --max_batch_fee_rate 253 --interest_rate_percent 0.0001
 ```
 
 * `amt` is the total amount of inbound liquidity being bid on.
@@ -149,7 +149,7 @@ orders submit bid --amt 100000000 --acct_key 03b5ef9a2ab19502fbb1f72d597d772eff1
 ### How do I see the channel I bought?
 
 ```shell
-accounts leases
+pool accounts leases
 ```
 
 * This includes the capacity: `channel_amt_sat`

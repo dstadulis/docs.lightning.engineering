@@ -597,7 +597,7 @@ launches, allowing you to simply type `lnd --bitcoin.testnet --bitcoin.active`
 at the command line, you can create an `lnd.conf`.
 
 **On macOS, located at:**
-`/Users/<username>/Library/Application Support/Lnd/lnd.conf`
+`/Users/$(whoami)/Library/Application\ Support/Lnd/lnd.conf`
 
 **On Linux, located at:**
 `~/.lnd/lnd.conf`

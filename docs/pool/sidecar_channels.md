@@ -56,7 +56,7 @@ needs to work, therefore we show the more involved example here.
    Charlie for those costs or not is not part of the protocol and irrelevant for
    this example.
 2. ```shell
-   charlie$   pool sidecar offer --capacity 1000000 --self_chan_balance 200000 --auto <rest of order details>
+   charlie@host:~$ pool sidecar offer --capacity 1000000 --self_chan_balance 200000 --auto <rest of order details>
    {
      "sidecar_ticket": "sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB...."
    }
@@ -75,7 +75,7 @@ needs to work, therefore we show the more involved example here.
 
 3. Alice now needs to add her node's information:
    ```shell
-   alice$   pool sidecar register sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB
+   alice@host:~$ pool sidecar register sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB
    { 
      "sidecar_ticket": "sidecar15o1Y9oXtyKr3hs2UQho9YmJKbSmB...."
    }
@@ -97,7 +97,7 @@ communication:
 1. Charlie can now create the bid order with the updated ticket he got from
    Alice:
    ```shell
-   charlie$  pool orders submit bid --acct_key <charlie-key> \
+   charlie@host:~$ pool orders submit bid --acct_key <charlie-key> \
      --interest_rate_percent xxx --sidecar_ticket  sidecarAAQgHBgUEAwIBAAMB...
    {
       "order_nonce": "0011223344...",
@@ -108,5 +108,5 @@ communication:
    Charlie can give the final version of the ticket back to Alice.
 2. Alice instructs her node to start expecting a channel.
    ```shell
-   alice$  pool sidecar expect-channel sidecarAAQgHBgUEAwIBAAMBYwUBAg...
+   alice@host:~$ pool sidecar expect-channel sidecarAAQgHBgUEAwIBAAMBYwUBAg...
    ```
