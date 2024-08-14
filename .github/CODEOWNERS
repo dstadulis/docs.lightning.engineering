@@ -2,8 +2,5 @@
 # majority of the content. The docs dir is intentionally excluded because we 
 # make automated PRs to it for the sync workflow.
 build-a-lapp/* @jamaljsr
-advanced-best-practices/* @carlaKC
-scripts/* @carlaKC
 community-resources/* @alexbosworth
 intermediate-get-lit/* @ryanthegentry
-
