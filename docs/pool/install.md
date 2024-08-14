@@ -21,9 +21,9 @@ To build both the `poold` and `pool` binaries from the source code, at least the
 To download the code, compile and install it, the following commands can then be run:
 
 ```text
-$ git clone https://github.com/lightninglabs/pool
-$ cd pool
-$ make install
+git clone https://github.com/lightninglabs/pool
+cd pool
+make install
 ```
 
 This will install the binaries into your `$GOPATH/bin` directory.
@@ -35,7 +35,7 @@ Lightning Pool needs to be connected to an `lnd` node version `v0.12.0-beta` (`v
 [Installing `lnd` from source](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md#installing-lnd) is also possible but needs to be done **with all sub-server build flags enabled**:
 
 ```text
-$ make install tags="signrpc walletrpc chainrpc invoicesrpc"
+make install tags="signrpc walletrpc chainrpc invoicesrpc"
 ```
 
 ### Running `poold`
@@ -59,7 +59,7 @@ In the case that `lnd` is running on a remote node, the `tls.cert` and the `admi
 The daemon can then be configured to connect to the remote `lnd` node by using the following command line flags:
 
 ```text
-$ poold --lnd.host=<the_remote_host_IP_address>:10009 \
+poold --lnd.host=<the_remote_host_IP_address>:10009 \
         --lnd.macaroonpath=/some/directory/with/lnd/data/macaroons/admin.macaroon \
         --lnd.tlspath=/some/directory/with/lnd/data/tls.cert
 ```

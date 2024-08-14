@@ -53,7 +53,7 @@ Feb 05 17:02:11.000 [notice] Bootstrapped 100%: Done
 This indicates the daemon is fully bootstrapped and ready to proxy connections. At this point, we can now start `lnd` with the relevant arguments:
 
 ```text
-⛰  ./lnd -h
+$ lnd -h
 
 <snip>
 
@@ -79,11 +79,11 @@ Inbound connections are possible due to `lnd` automatically creating an onion se
 Most of these arguments have defaults, so as long as they apply to you, routing all outbound and inbound connections through Tor can simply be done with either v2 or v3 onion services:
 
 ```text
-⛰  ./lnd --tor.active --tor.v2
+lnd --tor.active --tor.v2
 ```
 
 ```text
-⛰  ./lnd --tor.active --tor.v3
+lnd --tor.active --tor.v3
 ```
 
 See [Listening for Inbound Connections](configuring_tor.md#listening-for-inbound-connections) for more info about allowing inbound connections via Tor.
@@ -91,7 +91,7 @@ See [Listening for Inbound Connections](configuring_tor.md#listening-for-inbound
 Outbound support only can also be used with:
 
 ```text
-⛰  ./lnd --tor.active
+lnd --tor.active
 ```
 
 This will allow you to make all outgoing connections over Tor. Listening is disabled to prevent inadvertent leaks.
@@ -103,7 +103,7 @@ Our support for Tor also has an additional privacy enhancing modified: stream is
 Activating stream isolation is very straightforward, we only require the specification of an additional argument:
 
 ```text
-⛰  ./lnd --tor.active --tor.streamisolation
+lnd --tor.active --tor.streamisolation
 ```
 
 ## Authentication
@@ -145,7 +145,7 @@ Both types can be created and used automatically by `lnd`. Specifying which type
 For example, v3 onion services can be used with the following flags:
 
 ```text
-⛰  ./lnd --tor.active --tor.v3 --listen=localhost
+lnd --tor.active --tor.v3 --listen=localhost
 ```
 
 This will automatically create a hidden service for your node to use to listen for inbound connections and advertise itself to the network. The onion service's private key is saved to a file named `v2_onion_private_key` or `v3_onion_private_key` depending on the type of onion service used in `lnd`'s base directory. This will allow `lnd` to recreate the same hidden service upon restart. If you wish to generate a new onion service, you can simply delete this file. The path to this private key file can also be modified with the `--tor.privatekeypath` argument.

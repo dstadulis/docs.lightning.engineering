@@ -95,7 +95,7 @@ silently decrypt to a new (likely empty) wallet.
 The initial entry point to trigger recovery of on-chain funds in the command
 line is the `lncli create` command.
 ```shell
-$   lncli create
+lncli create
 ```
 
 Next, one can enter a _new_ wallet password to encrypt any newly derived keys
@@ -183,7 +183,7 @@ If the rescan wasn't able to complete fully (`lnd` was shutdown for example),
 then from `lncli unlock`, it's possible to _restart_ the rescan from where it
 left off with the `--recovery-window` argument:
 ```shell
-$  lncli unlock --recovery_window=2500
+lncli unlock --recovery_window=2500
 ```
 
 Note that if this argument is not specified, then the wallet will not
@@ -197,7 +197,7 @@ there's no existing UTXO or key data in the node's database. However, there are
 times when an _existing_ node may want to _manually_ rescan the chain. We have
 a command line flag for that! Just start `lnd` and add the following flag:
 ```shell
-$  lnd --reset-wallet-transactions
+lnd --reset-wallet-transactions
 ```
 
 The `--reset-wallet-transactions` flag will _reset_ the best synced height of

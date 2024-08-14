@@ -52,8 +52,8 @@ extra steps (after completing all 6 step described above) to get the
 `router_pb2.py`, `router_pb2_grpc.py` and `router_pb2.pyi`:
 
 ```shell
-lnd $  curl -o router.proto -s https://raw.githubusercontent.com/lightningnetwork/lnd/master/lnrpc/routerrpc/router.proto
-lnd $  python -m grpc_tools.protoc --proto_path=googleapis:. --mypy_out=. --python_out=. --grpc_python_out=. router.proto
+curl -o router.proto -s https://raw.githubusercontent.com/lightningnetwork/lnd/master/lnrpc/routerrpc/router.proto
+python -m grpc_tools.protoc --proto_path=googleapis:. --mypy_out=. --python_out=. --grpc_python_out=. router.proto
 ```
 
 ### Imports and Client

@@ -9,7 +9,7 @@ Building on `kvdb` in v0.11.0 we're adding experimental [etcd](https://etcd.io) 
 To create a dev build of LND with etcd support use the following command:
 
 ```text
-⛰  make tags="kvdb_etcd"
+make tags="kvdb_etcd"
 ```
 
 The important tag is the `kvdb_etcd`, without which the binary is built without the etcd driver.
@@ -21,7 +21,7 @@ For development it is advised to set the `GOFLAGS` environment variable to `"-ta
 To start your local etcd instance for testing run:
 
 ```text
-⛰  ./etcd \
+./etcd \
     --auto-tls \
     --advertise-client-urls=https://127.0.0.1:2379 \
     --listen-client-urls=https://0.0.0.0:2379 \
@@ -38,7 +38,7 @@ To run LND with etcd, additional configuration is needed, specified either throu
 Sample command line:
 
 ```text
-⛰  ./lnd-debug \
+./lnd-debug \
     --db.backend=etcd \
     --db.etcd.host=127.0.0.1:2379 \
     --db.etcd.certfile=/home/user/etcd/bin/default.etcd/fixtures/client/cert.pem \

@@ -71,7 +71,7 @@ If specified, then this will be used to encrypt the cipher seed itself. The ciph
 The initial entry point to trigger recovery of on-chain funds in the command line is the `lncli create` command.
 
 ```text
-⛰   lncli create
+lncli create
 ```
 
 Next, one can enter a _new_ wallet password to encrypt any newly derived keys as a result of the recovery process.
@@ -151,7 +151,7 @@ That final line indicates the rescan is complete! If not all funds have appeared
 If the rescan wasn't able to complete fully \(`lnd` was shutdown for example\), then from `lncli unlock`, it's possible to _restart_ the rescan from where it left off with the `--recovery-window` argument:
 
 ```text
-⛰  lncli unlock --recovery_window=2500
+lncli unlock --recovery_window=2500
 ```
 
 Note that if this argument is not specified, then the wallet will not _re-enter_ the recovery mode and may miss funds during the portion of the rescan.
@@ -161,7 +161,7 @@ Note that if this argument is not specified, then the wallet will not _re-enter_
 The recovery methods described above assume a clean slate for a node, so there's no existing UTXO or key data in the node's database. However, there're times when an _existing_ node may want to _manually_ rescan the chain. We have a command line flag for that! Just start `lnd` and add the following flag:
 
 ```text
-⛰  lnd --reset-wallet-transactions
+lnd --reset-wallet-transactions
 ```
 
 The `--reset-wallet-transactions` flag will _reset_ the best synced height of the wallet back to its birthday, or genesis if the birthday isn't known \(for some older wallets\).
@@ -223,7 +223,7 @@ Using the gRPC interface directly, [a new call: `SubscribeChannelBackups`](https
 If a node is being created from scratch, then it's possible to pass in an existing SCB using the `lncli create` or `lncli unlock` commands:
 
 ```text
-⛰  lncli create -multi_file=channels.backup
+lncli create -multi_file=channels.backup
 ```
 
 Alternatively, the `restorechanbackup` command can be used if `lnd` has already been created at the time of SCB restoration:

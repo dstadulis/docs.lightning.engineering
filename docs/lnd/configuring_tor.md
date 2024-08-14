@@ -106,17 +106,17 @@ Most of these arguments have defaults, so as long as they apply to you, routing
 all outbound and inbound connections through Tor can simply be done with either
 v2 or v3 onion services:
 ```shell
-$  ./lnd --tor.active --tor.v2
+lnd --tor.active --tor.v2
 ```
 ```shell
-$  ./lnd --tor.active --tor.v3
+lnd --tor.active --tor.v3
 ```
 See [Listening for Inbound Connections](#listening-for-inbound-connections) for
 more info about allowing inbound connections via Tor.
 
 Outbound support only can also be used with:
 ```shell
-$  ./lnd --tor.active
+lnd --tor.active
 ```
 
 This will allow you to make all outgoing connections over Tor. Listening is
@@ -133,7 +133,7 @@ circuit.
 Activating stream isolation is very straightforward, we only require the
 specification of an additional argument:
 ```shell
-$  ./lnd --tor.active --tor.streamisolation
+lnd --tor.active --tor.streamisolation
 ```
 
 ## Authentication
@@ -171,7 +171,7 @@ to add the flag `listen=localhost`.
 
 For example, v3 onion services can be used with the following flags:
 ```shell
-$  ./lnd --tor.active --tor.v3 --listen=localhost
+lnd --tor.active --tor.v3 --listen=localhost
 ```
 
 This will automatically create a hidden service for your node to use to listen

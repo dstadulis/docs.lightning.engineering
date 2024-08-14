@@ -6,7 +6,7 @@ in the browser instead of the default root path (`/`).
 To build LiT with a custom path, run the following command:
 
 ```shell
-⛰  make PUBLIC_URL=/my-custom-path
+make PUBLIC_URL=/my-custom-path
 ```
 
 **Make sure to not include a `/` at the end of the path.** To revert to the
@@ -21,10 +21,10 @@ available on Docker Hub. Just append `-path-prefix` to any version tag (after
 
 ```shell
 # Default image.
-⛰  docker pull lightninglabs/lightning-terminal:v0.5.3-alpha
+docker pull lightninglabs/lightning-terminal:v0.5.3-alpha
 
 # Image with /lit path prefix.
-⛰  docker pull lightninglabs/lightning-terminal:v0.5.3-alpha-path-prefix
+docker pull lightninglabs/lightning-terminal:v0.5.3-alpha-path-prefix
 ```
 
 ## Use with nginx reverse proxy
@@ -38,7 +38,7 @@ behind the nginx reverse proxy).
 The example reverse proxy can be run with:
 
 ```shell
-⛰  cd docs
-⛰  docker run --name lit-nginx \
+cd docs
+docker run --name lit-nginx \
       -v $(pwd)/example-nginx.conf:/etc/nginx/nginx.conf:ro -p 8081:80 -d nginx
 ```

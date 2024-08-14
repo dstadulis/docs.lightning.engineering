@@ -24,7 +24,7 @@ remote.lnd.tlscertpath=/some/folder/with/lnd/data/tls.cert
 
 Run LiT:
 ```shell
-⛰  ./litd --uipassword=UP48lm4VjqxmOxB9X9stry6VTKBRQI
+litd --uipassword=UP48lm4VjqxmOxB9X9stry6VTKBRQI
 ```
 
 Visit https://localhost:8443 to access LiT.

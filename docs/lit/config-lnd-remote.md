@@ -47,7 +47,7 @@ these files.
 Run LiT:
 
 ```shell
-⛰  ./litd --uipassword=UP48lm4VjqxmOxB9X9stry6VTKBRQI
+litd --uipassword=UP48lm4VjqxmOxB9X9stry6VTKBRQI
 ```
 
 Visit https://localhost:8443 to access LiT.
@@ -110,7 +110,7 @@ The most minimal example command to start `litd` and connect it to a local `lnd`
 node that is running with default configuration settings is:
 
 ```shell
-⛰  litd --uipassword=My$trongP@ssword
+litd --uipassword=My$trongP@ssword
 ```
 
 All other command line flags are only needed to overwrite the default behavior.
@@ -120,7 +120,7 @@ running on another host and overwrites a few default settings in `loop`, `pool`,
 and `faraday` (optional):
 
 ```shell
-⛰  litd \
+litd \
   --httpslisten=0.0.0.0:8443 \
   --uipassword=My$trongP@ssword \
   --letsencrypt \
@@ -242,7 +242,7 @@ The `lncli` commands in the "remote" mode are the same as if `lnd` was running s
 on a remote host. We need to specify all flags explicitly.
 
 ```shell
-⛰  lncli --rpcserver=some-other-host:10009 \
+lncli --rpcserver=some-other-host:10009 \
   --tlscertpath=/some/folder/with/lnd/data/tls.cert \
   --macaroonpath=/some/folder/with/lnd/data/admin.macaroon \
   getinfo
@@ -256,7 +256,7 @@ as the TLS certificate of LiT. But `loopd` verifies its own macaroon, so we have
 specify that one from the `.loop` directory.
 
 ```shell
-⛰  loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
+loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
   --macaroonpath=~/.loop/testnet/loop.macaroon \
   quote out 500000
 ```
@@ -265,7 +265,7 @@ You can easily create an alias for this by adding the following line to your `~/
 file:
 
 ```shell
-⛰  alias lit-loop="loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.loop/testnet/loop.macaroon"
+alias lit-loop="loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.loop/testnet/loop.macaroon"
 ```
 
 ### Example `pool` command
@@ -275,7 +275,7 @@ specify the `host:port` and the TLS certificate of LiT but use the macaroon from
 the `.pool` directory.
 
 ```shell
-⛰  pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
+pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
   --macaroonpath=~/.pool/testnet/pool.macaroon \
   accounts list
 ```
@@ -284,7 +284,7 @@ You can easily create an alias for this by adding the following line to your
 `~/.bashrc` file:
 
 ```shell
-⛰  alias lit-pool="pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.pool/testnet/pool.macaroon"
+alias lit-pool="pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.pool/testnet/pool.macaroon"
 ```
 
 ### Example `frcli` command
@@ -293,7 +293,7 @@ Faraday's command line tool follows the same pattern as loop. We also have to sp
 server and TLS flags for `lnd` but use `faraday`'s macaroon:
 
 ```shell
-⛰  frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
+frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
   --macaroonpath=~/.faraday/testnet/faraday.macaroon \
   audit
 ```
@@ -302,7 +302,7 @@ You can easily create an alias for this by adding the following line to your `~/
 file:
 
 ```shell
-⛰  alias lit-frcli="frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.faraday/testnet/faraday.macaroon"
+alias lit-frcli="frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.faraday/testnet/faraday.macaroon"
 ```
 
 ## Shutting down LiT
@@ -314,5 +314,5 @@ command can be used to send an interrupt signal which will trigger the clean
 shutdown:
 
 ```shell
-⛰  kill -s INT $(pidof litd)
+kill -s INT $(pidof litd)
 ```

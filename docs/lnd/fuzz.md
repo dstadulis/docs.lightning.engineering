@@ -2,29 +2,29 @@
 
 The following runs all fuzz tests on default settings:
 ```shell
-$  make fuzz
+make fuzz
 ```
 The following runs all fuzz tests inside the lnwire package, each for a total of 1 minute, using 4 procs. 
 It is recommended that processes be set to the number of processor cores in the system:
 ```shell
-$  make fuzz pkg=lnwire fuzztime=1m parallel=4
+make fuzz pkg=lnwire fuzztime=1m parallel=4
 ```
 Alternatively, individual fuzz tests can be run manually by setting the working directory to the location of the .go file holding the fuzz tests.
 The go test command can only test one fuzz test at a time:
 ```shell
-$  cd lnwire
-$  go test -fuzz=FuzzAcceptChannel -fuzztime=1m -parallel=4
+cd lnwire
+go test -fuzz=FuzzAcceptChannel -fuzztime=1m -parallel=4
 ```
 The following can be used to show all fuzz tests in the working directory:
 ```shell
-$  cd lnwire
-$  go test -list=Fuzz.*
+cd lnwire
+go test -list=Fuzz.*
 ```
 
 Fuzz tests can be run as normal tests, which only runs the seed corpus:
 ```shell
-$  cd lnwire
-$  go test -run=FuzzAcceptChannel -parallel=4
+cd lnwire
+go test -run=FuzzAcceptChannel -parallel=4
 ```
 The generated corpus values can be found in the $(go env GOCACHE)/fuzz directory.
 ## Options ##

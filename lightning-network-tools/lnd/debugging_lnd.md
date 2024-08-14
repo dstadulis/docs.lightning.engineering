@@ -76,7 +76,7 @@ Subsystems:
 To enable this ability, start `lnd` with the `--profile` option using a free port.
 
 ```
-⛰  lnd --profile=9736
+lnd --profile=9736
 ```
 
 Now, with `lnd` running, you can use the pprof endpoint on port 9736 to collect runtime profiling data. You can fetch this data using `curl` like so:

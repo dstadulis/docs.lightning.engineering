@@ -90,7 +90,7 @@ Let's now take a look at all the order specific command line flags that are avai
 Command for submitting an ask order:
 
 ```text
-$ pool orders submit ask
+pool orders submit ask
 ```
 
 Help output:
@@ -138,7 +138,7 @@ NOTE: The default values shown in the command line help are different from the a
 Command for submitting a bid order:
 
 ```text
-$ pool orders submit bid
+pool orders submit bid
 ```
 
 Help output:
@@ -294,7 +294,7 @@ To reduce the value of this worst-case estimation, there are two possible flags 
 To cancel an order. First get the order_nonce of the to be canceled order by using the list command and then cancel it: 
 
 ```text
-$ pool orders cancel order_nonce
+pool orders cancel order_nonce
 ```
 
 ## Auction types

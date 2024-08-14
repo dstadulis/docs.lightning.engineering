@@ -77,7 +77,7 @@ Note that the `pool auction snapshot` command can be used to determine the past 
 The command also accept a target `batch_id` as well. Here we can use the `prev_batch_id` to examine the _prior_ batch, similar to traversing a link-listed/blockchain:
 
 ```text
-🏔 pool auction snapshot --batch_id=03687baa3c7414e800ddba37edacb3281999739303b7290a69bd457f428ecd9b2c
+pool auction snapshot --batch_id=03687baa3c7414e800ddba37edacb3281999739303b7290a69bd457f428ecd9b2c
 ```
 
 ## Fees

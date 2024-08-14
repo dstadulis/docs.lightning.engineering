@@ -13,9 +13,9 @@ Once you have the necessary prerequisites, LiT can be compiled by running the fo
 commands:
 
 ```shell script
-$ git clone https://github.com/lightninglabs/lightning-terminal.git
-$ cd lightning-terminal
-$ make install
+git clone https://github.com/lightninglabs/lightning-terminal.git
+cd lightning-terminal
+make install
 ```
 
 This will produce the `litd` executable and add it to your `GOPATH`. The CLI binaries for
@@ -43,15 +43,15 @@ install all necessary dependencies.
 Then, instead of `make install` run the following commands:
 
 ```shell script
-$ docker build -f dev.Dockerfile -t my-lit-dev-image .
+docker build -f dev.Dockerfile -t my-lit-dev-image .
 ```
 
 If successful, you can then run the docker image with:
 
 ```shell script
-$ docker run -p 8443:8443 --rm --name litd my-lit-dev-image \
+docker run -p 8443:8443 --rm --name litd my-lit-dev-image \
   --httpslisten=0.0.0.0:8443 \
-  ... (your configuration flags here)
+  # Add custom configuration flags here
 ```
 
 See the [execution section in the main README](../README.md#execution) to find
@@ -64,7 +64,7 @@ image from. All local files will be ignored, everything is cloned and built from
 GitHub so you don't need to install any dependencies:
 
 ```shell script
-$ docker build -t lightninglabs/lightning-terminal --build-arg checkout=v0.3.2-alpha .
+docker build -t lightninglabs/lightning-terminal --build-arg checkout=v0.3.2-alpha .
 ```
 
 ### Compiling gRPC proto files
@@ -82,14 +82,14 @@ To compile the proto files into JS/TS code, follow the following steps:
 1. Run the following command to download the proto files from each repo and
    compile the JS/TS code using the updated protos.
    ```shell
-   $ make protos
+   make protos
    ```
 1. Fix any typing, linting, or unit test failures introduced by the update. Run the
    commands below to find and fix these errors in the app code.
    ```shell script
-   $ cd app
-   $ yarn tsc
-   $ yarn lint
-   $ yarn test:ci
+   cd app
+   yarn tsc
+   yarn lint
+   yarn test:ci
    ```
 1. Once all errors have been resolved, commit your changes and open a PR

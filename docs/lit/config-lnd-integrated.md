@@ -27,7 +27,7 @@ Here is an example command to start `litd` on testnet with a local `bitcoind`
 node:
 
 ```shell
-⛰  litd \
+litd \
   --httpslisten=0.0.0.0:8443 \
   --uipassword=My$trongP@ssword \
   --letsencrypt \
@@ -174,7 +174,7 @@ For `lnd`:
   Before:
 
   ```shell
-  ⛰  lnd --lnddir=~/.lnd --alias=merchant ...
+  lnd --lnddir=~/.lnd --alias=merchant ...
   ```
 
   After:
@@ -209,13 +209,13 @@ For `loop`:
   Before:
 
   ```shell
-  ⛰  loop --loopoutmaxparts=5 --debuglevel=debug ...
+  loop --loopoutmaxparts=5 --debuglevel=debug ...
   ```
 
   After:
 
   ```shell
-  ⛰  litd --loop.loopoutmaxparts=5 --loop.debuglevel=debug ...
+  litd --loop.loopoutmaxparts=5 --loop.debuglevel=debug ...
   ```
 
 For `faraday`:
@@ -227,7 +227,7 @@ For `faraday`:
   Before: (from command line)
 
   ```shell
-  ⛰  faraday --min_monitored=48h
+  faraday --min_monitored=48h
   ```
 
   After: (in `lit.conf`)
@@ -243,13 +243,13 @@ For `faraday`:
   Before:
 
   ```shell
-  ⛰  faraday --min_monitored=48h --debuglevel=debug ...
+  faraday --min_monitored=48h --debuglevel=debug ...
   ```
 
   After:
 
   ```shell
-  ⛰  litd --faraday.min_monitored=48h --faraday.debuglevel=debug...
+  litd --faraday.min_monitored=48h --faraday.debuglevel=debug...
   ```
 
 ## Upgrading from LiT v0.1.1-alpha or earlier
@@ -305,7 +305,7 @@ running standalone. The `--lnddir` flag does not need to be specified as long
 as it is the default directory (`~/.lnd` on Linux).
 
 ```shell
-⛰  lncli --rpcserver=localhost:10009 --tlscertpath=~/.lnd/tls.cert getinfo
+lncli --rpcserver=localhost:10009 --tlscertpath=~/.lnd/tls.cert getinfo
 ```
 
 ### Example `loop` command
@@ -316,7 +316,7 @@ runs on the same gRPC server as `lnd`. That's why we have to both specify the
 own macaroon, so we have to specify that one from the `.loop` directory.
 
 ```shell
-⛰  loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
+loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
   --macaroonpath=~/.loop/testnet/loop.macaroon \
   quote out 500000
 ```
@@ -325,7 +325,7 @@ You can easily create an alias for this by adding the following line to your
 `~/.bashrc` file:
 
 ```shell
-⛰  alias lit-loop="loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.loop/testnet/loop.macaroon"
+alias lit-loop="loop --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.loop/testnet/loop.macaroon"
 ```
 
 ### Example `pool` command
@@ -335,7 +335,7 @@ the `host:port` and the TLS certificate of `lnd` but use the macaroon from the
 `.pool` directory.
 
 ```shell
-⛰  pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
+pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
   --macaroonpath=~/.pool/testnet/pool.macaroon \
   accounts list
 ```
@@ -344,7 +344,7 @@ You can easily create an alias for this by adding the following line to your
 `~/.bashrc` file:
 
 ```shell
-⛰  alias lit-pool="pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.pool/testnet/pool.macaroon"
+alias lit-pool="pool --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.pool/testnet/pool.macaroon"
 ```
 
 ### Example `frcli` command
@@ -353,7 +353,7 @@ Faraday's command line tool follows the same pattern as loop. We also have to
 specify the server and TLS flags for `lnd` but use `faraday`'s macaroon:
 
 ```shell
-⛰  frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
+frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert \
   --macaroonpath=~/.faraday/testnet/faraday.macaroon \
   audit
 ```
@@ -362,7 +362,7 @@ You can easily create an alias for this by adding the following line to your
 `~/.bashrc` file:
 
 ```shell
-⛰  alias lit-frcli="frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.faraday/testnet/faraday.macaroon"
+alias lit-frcli="frcli --rpcserver=localhost:8443 --tlscertpath=~/.lit/tls.cert --macaroonpath=~/.faraday/testnet/faraday.macaroon"
 ```
 
 ## Shutting down LiT
@@ -371,5 +371,5 @@ In the integrated mode LiT can be shut down by stopping the integrated `lnd`
 node:
 
 ```shell
-⛰  lncli stop
+lncli stop
 ```
