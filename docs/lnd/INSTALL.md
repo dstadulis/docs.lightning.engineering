@@ -405,7 +405,7 @@ time.
 
 You can test your `btcd` node's connectivity using the `getpeerinfo` command:
 ```shell
- btcctl --testnet --rpcuser=REPLACEME --rpcpass=REPLACEME getpeerinfo | more
+btcctl --testnet --rpcuser=REPLACEME --rpcpass=REPLACEME getpeerinfo | more
 ```
 
 ### Running lnd using the btcd backend
@@ -415,8 +415,8 @@ Otherwise, replace `--bitcoin.testnet` with `--bitcoin.simnet`. If you are
 installing `lnd` in preparation for the
 [tutorial](https://dev.lightning.community/tutorial), you may skip this step.
 ```shell
- lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug \
-       --btcd.rpcuser=kek --btcd.rpcpass=kek --externalip=X.X.X.X
+lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug \
+    --btcd.rpcuser=kek --btcd.rpcpass=kek --externalip=X.X.X.X
 ```
 
 ## Using Neutrino
@@ -431,8 +431,8 @@ mode.  A public instance of such a node can be found at
 To run lnd in neutrino mode, run `lnd` with the following arguments, (swapping
 in `--bitcoin.simnet` if needed), and also your own `btcd` node if available:
 ```shell
- lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug \
-       --bitcoin.node=neutrino --neutrino.connect=faucet.lightning.community
+lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug \
+    --bitcoin.node=neutrino --neutrino.connect=faucet.lightning.community
 ```
 
 
@@ -483,12 +483,12 @@ updated with the latest blocks on testnet, run the command below to launch
 below):
 
 ```shell
- lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug \
-       --bitcoin.node=bitcoind --bitcoind.rpcuser=REPLACEME \
-       --bitcoind.rpcpass=REPLACEME \
-       --bitcoind.zmqpubrawblock=tcp://127.0.0.1:28332 \
-       --bitcoind.zmqpubrawtx=tcp://127.0.0.1:28333 \
-       --externalip=X.X.X.X
+lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug \
+    --bitcoin.node=bitcoind --bitcoind.rpcuser=REPLACEME \
+    --bitcoind.rpcpass=REPLACEME \
+    --bitcoind.zmqpubrawblock=tcp://127.0.0.1:28332 \
+    --bitcoind.zmqpubrawtx=tcp://127.0.0.1:28333 \
+    --externalip=X.X.X.X
 ```
 
 *NOTE:*
@@ -524,7 +524,7 @@ below):
 # Creating a wallet
 If `lnd` is being run for the first time, create a new wallet with:
 ```shell
- lncli create
+lncli create
 ```
 This will prompt for a wallet password, and optionally a cipher seed
 passphrase.

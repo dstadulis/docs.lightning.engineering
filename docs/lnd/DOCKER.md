@@ -99,7 +99,7 @@ docker exec -it lnd-testnet lncli create
 Confirm `lnd` has begun to synchronize:
 
 ```shell
-$  docker logs lnd-testnet
+$ docker logs lnd-testnet
 [snipped]
 2018-05-01 02:28:01.201 [INF] RPCS: RPC server listening on 127.0.0.1:10009
 2018-05-01 02:28:01.201 [INF] LTND: Waiting for chain backend to finish sync, start_height=2546

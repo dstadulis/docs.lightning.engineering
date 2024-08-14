@@ -45,7 +45,7 @@ Retrieving information about your tower’s configurations can be done using
 `lncli tower info`:
 
 ```shell
-$  lncli tower info
+$ lncli tower info
 {
         "pubkey": "03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63",
         "listeners": [
@@ -60,7 +60,7 @@ The entire set of watchtower configuration options can be found using
 `lnd -h`:
 
 ```shell
-$  lnd -h
+$ lnd -h
 ...
 watchtower:
       --watchtower.active                                     If the watchtower should be active or not
@@ -88,7 +88,7 @@ Additionally, users can specify their tower’s external IP address(es) using
 (pubkey@host:port) over RPC or `lncli tower info`: 
 
 ```shell
-$  lncli tower info
+$ lncli tower info
         ...
         "uris": [
                 "03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63@1.2.3.4:9911"
@@ -181,7 +181,7 @@ determine whether it is currently being used for backups through the
 `active_session_candidate` value.
 
 ```shell
-$  lncli wtclient tower 03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63
+$ lncli wtclient tower 03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63
 {
 	"pubkey": "03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63",
 	"addresses": [
@@ -197,7 +197,7 @@ To obtain information about the watchtower's sessions, users can use the
 `--include_sessions` flag.
 
 ```shell
-$  lncli wtclient tower --include_sessions 03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63
+$ lncli wtclient tower --include_sessions 03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63
 {
         "pubkey": "03281d603b2c5e19b8893a484eb938d7377179a9ef1a6bca4c0bcbbfc291657b63",
         "addresses": [
@@ -220,7 +220,7 @@ The entire set of watchtower client configuration options can be found with
 `lncli wtclient -h`:
 
 ```shell
-$  lncli wtclient -h
+$ lncli wtclient -h
 NAME:
    lncli wtclient - Interact with the watchtower client.
 

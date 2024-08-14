@@ -171,7 +171,7 @@ birthday!) and how many addresses were used, the rescan may take anywhere from
 a few minutes to a few hours. To track the recovery progress, one can use the
 command `lncli getrecoveryinfo`. When finished, the following is returned,
 ```shell
-$  lncli getrecoveryinfo
+$ lncli getrecoveryinfo
 {
     "recovery_mode": true,
     "recovery_finished": true,
@@ -263,13 +263,13 @@ here](https://gist.github.com/alexbosworth/2c5e185aedbdac45a03655b709e255a3).
 Another way to obtain SCBS for all or a target channel is via the new
 `exportchanbackup` `lncli` command:
 ```shell
-$  lncli --network=simnet exportchanbackup --chan_point=29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0
+$ lncli --network=simnet exportchanbackup --chan_point=29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0
 {
     "chan_point": "29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0",
     "chan_backup": "02e7b423c8cf11038354732e9696caff9d5ac9720440f70a50ca2b9fcef5d873c8e64d53bdadfe208a86c96c7f31dc4eb370a02631bb02dce6611c435753a0c1f86c9f5b99006457f0dc7ee4a1c19e0d31a1036941d65717a50136c877d66ec80bb8f3e67cee8d9a5cb3f4081c3817cd830a8d0cf851c1f1e03fee35d790e42d98df5b24e07e6d9d9a46a16352e9b44ad412571c903a532017a5bc1ffe1369c123e1e17e1e4d52cc32329aa205d73d57f846389a6e446f612eeb2dcc346e4590f59a4c533f216ee44f09c1d2298b7d6c"
 }
 
-$  lncli --network=simnet exportchanbackup --all
+$ lncli --network=simnet exportchanbackup --all
 {
     "chan_points": [
         "29be6d259dc71ebdf0a3a0e83b240eda78f9023d8aeaae13c89250c7e59467d5:0"
@@ -277,7 +277,7 @@ $  lncli --network=simnet exportchanbackup --all
     "multi_chan_backup": "fd73e992e5133aa085c8e45548e0189c411c8cfe42e902b0ee2dec528a18fb472c3375447868ffced0d4812125e4361d667b7e6a18b2357643e09bbe7e9110c6b28d74f4f55e7c29e92419b52509e5c367cf2d977b670a2ff7560f5fe24021d246abe30542e6c6e3aa52f903453c3a2389af918249dbdb5f1199aaecf4931c0366592165b10bdd58eaf706d6df02a39d9323a0c65260ffcc84776f2705e4942d89e4dbefa11c693027002c35582d56e295dcf74d27e90873699657337696b32c05c8014911a7ec8eb03bdbe526fe658be8abdf50ab12c4fec9ddeefc489cf817721c8e541d28fbe71e32137b5ea066a9f4e19814deedeb360def90eff2965570aab5fedd0ebfcd783ce3289360953680ac084b2e988c9cbd0912da400861467d7bb5ad4b42a95c2d541653e805cbfc84da401baf096fba43300358421ae1b43fd25f3289c8c73489977592f75bc9f73781f41718a752ab325b70c8eb2011c5d979f6efc7a76e16492566e43d94dbd42698eb06ff8ad4fd3f2baabafded"
 }
 
-$  lncli --network=simnet exportchanbackup --all --output_file=channel.backup
+$ lncli --network=simnet exportchanbackup --all --output_file=channel.backup
 ```
 
 As shown above, a user can either: specify a specific channel to back up, backup
@@ -297,13 +297,13 @@ schemes, compared to the file system notification based approach.
 If a node is being created from scratch, then it's possible to pass in an
 existing SCB using the `lncli create` or `lncli unlock` commands:
 ```shell
-$  lncli create -multi_file=channel.backup
+$ lncli create -multi_file=channel.backup
 ```
 
 Alternatively, the `restorechanbackup` command can be used if `lnd` has already
 been created at the time of SCB restoration:
 ```shell
-$  lncli restorechanbackup -h
+$ lncli restorechanbackup -h
 NAME:
    lncli restorechanbackup - Restore an existing single or multi-channel static channel backup
 

@@ -122,12 +122,12 @@ using (var call = client.SubscribeInvoices(request))
 
 Now, create an invoice for your node at `localhost:10009` and send a payment to it from another node.
 ```shell
-$  lncli addinvoice --amt=100
+$ lncli addinvoice --amt=100
 {
     "r_hash": <R_HASH>,
     "pay_req": <PAY_REQ>
 }
-$  lncli sendpayment --pay_req=<PAY_REQ>
+$ lncli sendpayment --pay_req=<PAY_REQ>
 ```
 
 Your console should now display the details of the recently satisfied invoice.

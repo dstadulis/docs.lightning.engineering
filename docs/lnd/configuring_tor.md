@@ -46,7 +46,7 @@ CookieAuthentication 1
 
 With the configuration file created, you'll then want to start the Tor daemon:
 ```shell
-$  tor
+$ tor
 Feb 05 17:02:06.501 [notice] Tor 0.3.1.8 (git-ad5027f7dc790624) running on Darwin with Libevent 2.1.8-stable, OpenSSL 1.0.2l, Zlib 1.2.8, Liblzma N/A, and Libzstd N/A.
 Feb 05 17:02:06.502 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://www.torproject.org/download/download#warning
 Feb 05 17:02:06.502 [notice] Read configuration file "/usr/local/etc/tor/torrc".
@@ -69,7 +69,7 @@ This indicates the daemon is fully bootstrapped and ready to proxy connections.
 At this point, we can now start `lnd` with the relevant arguments:
 
 ```shell
-$  ./lnd -h
+$ lnd -h
 
 <snip>
 
