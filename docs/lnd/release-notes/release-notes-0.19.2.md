@@ -29,9 +29,17 @@
 - [Fixed](https://github.com/lightningnetwork/lnd/pull/9962) a case where the
   node may panic if it's running in the remote signer mode.
 
+- [Fixed](https://github.com/lightningnetwork/lnd/pull/9978) a deadlock which
+  can happen when the peer start-up has not yet completed but a another p2p
+  connection attempt tries to disconnect the peer.
+
 # New Features
 
 ## Functional Enhancements
+
+- [Adds](https://github.com/lightningnetwork/lnd/pull/9989) a method 
+  `FeeForWeightRoundUp` to the `chainfee` package which rounds up a calculated 
+  fee value to the nearest satoshi.
 
 ## RPC Additions
 
@@ -78,4 +86,5 @@ much more slowly.
 ## Tooling and Documentation
 
 # Contributors (Alphabetical Order)
+* hieblmi
 * Yong Yu
