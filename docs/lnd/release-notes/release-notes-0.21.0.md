@@ -32,19 +32,6 @@
   sub-server is still starting. This allows clients to reliably detect the
   transient condition and retry without brittle string matching.
 
-- [Fixed an issue](https://github.com/lightningnetwork/lnd/pull/10399) where the
-  TLS manager would fail to start if only one of the TLS pair files (certificate
-  or key) existed. The manager now correctly regenerates both files when either
-  is missing, preventing "file not found" errors on startup.
-
-- [Fixed race conditions](https://github.com/lightningnetwork/lnd/pull/10420) in
-  the channel graph database. The `Node.PubKey()` and
-  `ChannelEdgeInfo.NodeKey1/NodeKey2()` methods had check-then-act races when
-  caching parsed public keys. Additionally, `DisconnectBlockAtHeight` was
-  accessing the reject and channel caches without proper locking. The caching
-  has been removed from the public key parsing methods, and proper mutex
-  protection has been added to the cache access in `DisconnectBlockAtHeight`.
-
 - [Fixed TLV decoders to reject malformed records with incorrect lengths](https://github.com/lightningnetwork/lnd/pull/10249).
   TLV decoders now strictly enforce fixed-length requirements for Fee (8 bytes),
   Musig2Nonce (66 bytes), ShortChannelID (8 bytes), Vertex (33 bytes), and
@@ -62,12 +49,6 @@
   validation now checks `TrickleDelay` at startup and defaults it to 1
   millisecond if set to zero or a negative value, preventing `time.NewTicker`
   from panicking.
-
-- [Fixed a shutdown
-  deadlock](https://github.com/lightningnetwork/lnd/pull/10540) in the gossiper.
-  Certain gossip messages could cause multiple error messages to be sent on a
-  channel that was only expected to be used for a single message. The erring
-  goroutine would block on the second send, leading to a deadlock at shutdown.
 
 * [Fixed `lncli unlock` to wait until the wallet is ready to be
   unlocked](https://github.com/lightningnetwork/lnd/pull/10536)
@@ -253,7 +234,12 @@
     [2](https://github.com/lightningnetwork/lnd/pull/10379)
     [3](https://github.com/lightningnetwork/lnd/pull/10380)
     [4](https://github.com/lightningnetwork/lnd/pull/10542),
-    [5](https://github.com/lightningnetwork/lnd/pull/10572).
+    [5](https://github.com/lightningnetwork/lnd/pull/10572),
+    [6](https://github.com/lightningnetwork/lnd/pull/10582).
+* Updated waiting proof persistence for gossip upgrades by introducing typed
+  waiting proof keys and payloads, with a DB migration to rewrite legacy
+  waiting proof records to the new key/value format
+  ([#10633](https://github.com/lightningnetwork/lnd/pull/10633)).
 
 * Payment Store SQL implementation and migration project:
   * Introduce an [abstract payment 
@@ -310,7 +296,6 @@
 * Erick Cestari
 * Gijs van Dam
 * hieblmi
-* Matt Morehouse
 * Mohamed Awnallah
 * Nishant Bansal
 * Pins
