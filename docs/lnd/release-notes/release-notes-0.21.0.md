@@ -103,6 +103,16 @@
   to use independent probe payment hashes when probing multiple LSPs, preventing
   later probes from reusing the first probe's CLTV delta.
 
+* [Restored insta-dispatch of `CLOSED_CHANNEL` on the first confirmation of a
+  cooperative close](https://github.com/lightningnetwork/lnd/pull/10794).
+  After the multi-conf reorg-aware close dispatch landed,
+  `SubscribeChannelEvents` no longer emitted `CLOSED_CHANNEL` until the full
+  required confirmation depth was reached. The chain watcher now fires an
+  early `CLOSED_CHANNEL` event over the channel notifier as soon as the coop
+  close spend lands on chain, restoring the v0.20.1 behavior, while the
+  channel arbitrator suppresses the duplicate event that would otherwise be
+  emitted from `MarkChannelClosed` at the final confirmation depth.
+
 # New Features
 
 - [Basic Support](https://github.com/lightningnetwork/lnd/pull/9868) for onion
@@ -116,6 +126,22 @@
   for routing onion messages. The router can now find paths through the channel 
   graph specifically filtered for nodes that advertise support for onion
   messaging (feature bit 38/39).
+
+* [Added fast initial sync for `neutrino`-backed nodes via header
+  import](https://github.com/lightningnetwork/lnd/pull/10552). On first startup,
+  the neutrino backend can now bootstrap its block and filter header chains
+  from a local file or HTTP(S) URL instead of fetching them over P2P,
+  dramatically reducing the time-to-sync on fresh installs (minutes instead of
+  hours on mainnet). After the import completes, the node transitions to the
+  normal P2P sync path to catch up to chain tip and stay current. The feature
+  is gated on the two new `neutrino.blockheaderssource` and
+  `neutrino.filterheaderssource` options, which must be specified together;
+  the import source already validates header linkage and proof-of-work, so
+  contextual timestamp checks are skipped during import to accommodate
+  rapidly-mined regtest/simnet headers. See
+  [docs/neutrino_headers_import.md](../neutrino_headers_import.md) for the
+  supported source URLs (e.g. `block-dn.org` for mainnet), file format, and
+  operator guidance.
 
 * [Added reorg protection for channel
   closes](https://github.com/lightningnetwork/lnd/pull/10331). Previously,
@@ -133,7 +159,13 @@
   `revoke_and_ack` keyed by funding TXID, laying the groundwork for splice
   support. The nonce type is now auto-detected from the negotiated channel type
   rather than peer feature bits, ensuring correct behavior across all recovery
-  and resynchronization paths.
+  and resynchronization paths. Taproot channels must be requested explicitly
+  with `lncli openchannel --channel_type=taproot` (the bare `taproot` string
+  now selects the production variant; `taproot-staging` opens the legacy
+  staging variant, and `taproot-final` is kept as a deprecated alias for
+  `taproot`), and must remain private until announced taproot channels are
+  supported. The RPC `CommitmentType` enum gains a `TAPROOT` alias for
+  `SIMPLE_TAPROOT_FINAL` so new RPC clients can use the same short name.
 
 * [Added taproot channel support for RBF cooperative
   close](https://github.com/lightningnetwork/lnd/pull/10063). The new RBF-based
