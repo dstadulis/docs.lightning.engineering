@@ -27,6 +27,12 @@
   the replay from being handled as a second interception while the original
   outgoing HTLC remains active.
 
+* [Fixed AMP reconstruction failure canceling the entire
+  invoice](https://github.com/lightningnetwork/lnd/pull/11198). An AMP set
+  that fails preimage reconstruction now only cancels the HTLCs of that set,
+  keeping the invoice open so that other accepted sets on reusable static
+  AMP invoices remain payable.
+
 # New Features
 
 ## Functional Enhancements
@@ -61,4 +67,17 @@
 
 ## Tooling and Documentation
 
+* [Documented](https://github.com/lightningnetwork/lnd/pull/11194) that the
+  `outgoing_amount_msat` field of the HTLC interceptor request is the
+  unvalidated `amt_to_forward` value from the sender's onion payload. It is only
+  checked against `incoming_amount_msat` and the forwarding policy when the HTLC
+  is resumed, never when it is settled by the interceptor. Interceptors that
+  settle HTLCs must base their accounting on `incoming_amount_msat`. The
+  `in_amount_msat` override on `RESUME_MODIFIED` is now also documented as
+  replacing the incoming amount used by that check, the incoming dust exposure
+  check and forwarding-history accounting.
+
 # Contributors (Alphabetical Order)
+
+* elsirion
+* Gijs van Dam
